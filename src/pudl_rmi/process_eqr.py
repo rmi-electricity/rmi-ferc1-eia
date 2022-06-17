@@ -22,12 +22,38 @@ FILE_END_STRS_TO_TABLE_NAMES = {
     "indexPub.CSV": "index_publishing",
     "ident.CSV": "identities",
     "contracts.CSV": "contracts",
+    "transactions.CSV": "transactions",
 }
 
 TABLE_DTYPES = {
     "identities": {"contact_zip": "string", "contact_phone": "string"},
     "contracts": {
         "seller_history_name": "string",
+    },
+    "transactions": {
+        "transaction_unique_id": "string",
+        "seller_company_name": "string",
+        "customer_company_name": "string",
+        "ferc_tariff_reference": "string",
+        "contract_service_agreement": "string",
+        "transaction_unique_identifier": "string",
+        "exchange_brokerage_service": "string",
+        "type_of_rate": "string",
+        "time_zone": "string",
+        "point_of_delivery_balancing_authority": "string",
+        "point_of_delivery_specific_location": "string",
+        "class_name": "string",
+        "term_name": "string",
+        "increment_name": "string",
+        "increment_peaking_name": "string",
+        "product_name": "string",
+        "transaction_quantity": float,
+        "price": float,
+        "rate_units": "string",
+        "standardized_quantity": float,
+        "standardized_price": float,
+        "total_transmission_charge": float,
+        "total_transaction_charge": float,
     },
 }
 
@@ -39,6 +65,11 @@ DATE_COLUMNS = {
         "actual_termination_date",
         "begin_date",
         "end_date",
+    ],
+    "transactions": [
+        "transaction_begin_date",
+        "transaction_end_date",
+        "trade_date",
     ],
 }
 
