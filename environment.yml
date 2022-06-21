@@ -1,11 +1,10 @@
 name: pudl-rmi
 channels:
   - conda-forge
-  - defaults
 dependencies:
   # Basic python environment requirements:
   - pip>=22,<23
-  - python>=3.8,<3.11
+  - python>=3.8,<3.10
   - setuptools<62
 
   # Tricky binary dependencies, best resolved w/ conda:
@@ -14,19 +13,22 @@ dependencies:
   - python-snappy>=0.6,<1 # Ensures snappy-dev library gets installed
   - numba>=0.55.1,<0.56 # not strictly necessary, but speeds some things up by 100x
   - sqlite>=3.36,<4 # Required by PUDL 0.5.0 and later.
+  - pyarrow>=7.0 # this is probably better installed by conda
 
   # So we can run a notebook server
   - jupyterlab>=3.2,<4
   - jupyter-resource-usage>=0.5,<1
 
   # Visualization and data validation packages used interactively but not required.
-  - pandera~=0.7.2
+  - pandera~=0.9
   - seaborn~=0.11.2
   - plotly==5.4.0
+  - rapidfuzz
 
   # Not normal Python packages that come from PyPI
   - nodejs # Useful for Jupyter Notebook Server
   - tqdm
+  - pytest==6.2.4
 
   - pip:
       - simpledbf~=0.2.6

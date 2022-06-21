@@ -1,5 +1,5 @@
 """A module for data validation and QA/QC of the RMI outputs."""
-
+from __future__ import annotations
 import logging
 from typing import List, Tuple
 
